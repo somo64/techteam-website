@@ -77,14 +77,24 @@ img {
     padding-top: 150px;
 }
 
-@media (max-width:960px) {
-    .hero img{
-        display: none;
+@media only screen and (max-width:960px) {
+    #home {
+        height: 65vh;
     }
-    .hero h1{
+
+    #home h1{
+        /* text-align: center; */
         width: 100%;
         /* border: #0d6efd solid 2px; */
         padding: 0 0;
+    }
+    #home p{
+        padding-right: 0 !important;
+        /* text-align: center; */
+    }
+
+    #home div{
+        text-align: center;
     }
     .navbar{
         background-color: var(--dark);
@@ -100,8 +110,71 @@ img {
     #contact form input{
         width: 100%;
         height: 100%;
-    }   
+    } 
+
+    #projects .project {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    #projects .project .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(21, 20, 51, 0.747);
+        padding: 30px;
+        display: flex;
+        align-items: flex-end;
+        transition: all 0.4s ease;
+        opacity: 1;
+    }
+    
+    #projects .project img {
+        /* width: 100%;
+        height: 270px; */
+        transition: all 0.4s ease;   
+    }
+    
+   
+    
+    #projects .project:hover img {
+        transform: scale(1.1);
+    }
+    
+    #services .service {
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+    
+    #services .service::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: var(--warning);
+        z-index: -1;
+        opacity: 1;
+        transition: all 0.4s ease;
+    } 
+
+    
+    #services .service .iconbox {
+        background-color: var(--white);
+        color: var(--warning);
+    }
+
+    #services .service h5,
+    #services .service p {
+        color: var(--white);
+    }
+    
 }
+
 .hero::after {
     content: "";
     width: 100%;
@@ -207,14 +280,14 @@ section {
     padding: 30px;
     display: flex;
     align-items: flex-end;
-    transition: all 0.4s ease;
+    transition: all 0.4s linear;
     opacity: 0;
 }
 
 .project img {
     /* width: 100%;
     height: 270px; */
-    transition: all 0.4s ease;   
+    transition: all 0.4s linear;   
 }
 
 .project:hover .overlay{
