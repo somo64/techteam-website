@@ -2,7 +2,7 @@
 window.addEventListener("scroll", function() {
     // console.log(window.scrollY)
     let navbar = document.querySelector('.nav2')
-    if(window.scrollY > 480) {
+    if(window.scrollY > 150) {
         navbar.classList.add('active')
     }else{
         navbar.classList.remove('active')
